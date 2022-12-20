@@ -58,3 +58,31 @@ Conditional Statement
 Comments
 Printing output
 Taking output from user
+
+Functions
+
+In Go, we have to explicitely declare the type of parameters which we are passing to any function and also the type of return value.
+
+In Go, we can return multiple values.
+
+Package level Variables
+
+We can declare Variables at package level, if we need them inside different functions in that package file.
+
+We can put different function in one package and export them by just writing their name with uppercase character.
+
+To use that exported function, first we have to import the package where we have declared that particular function.
+
+Scope Rules
+
+Local
+
+declared inside a particular function.
+
+Package
+
+declared outside all functions.
+
+Global
+
+declared with uppercase first character.
