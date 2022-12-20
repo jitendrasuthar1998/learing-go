@@ -1,0 +1,126 @@
+First Greet user, show conferenceName and available tickets and total tickets.
+
+Get user first name, last name, 0email, ticket count which he want to book, and then show thank you message.
+
+Initially we are saving user data in variables, and booking the ticket for him or her (only one user).
+
+But when multiple users book ticket, that time we have to store users data in some kind of list
+to keep track of who is attending the event.
+and who booked the ticket.
+
+and for that we have data types arrays and slice.
+
+arrays and slices are very common data types used in go.
+
+Arrays 
+whenever we define array in Go, we have to give it a size, because in Go, array have fixed size.
+
+
+var bookings = [50]
+
+slices
+
+we have one issue with array
+
+what if we don't know the size of array when creating it?
+
+let's say we have users who sign up for our news letter.
+
+we don't know how many users gonna sign up. this can be anything between 0 and indefinite.
+
+maybe not all tickets get book.
+
+or one user books all tickets.
+
+so, we have just one booking and array of size 50 with just one value inside.
+
+so, how we can define a list with dynamic size?
+
+basically where at least we don't need to specify the size of array at the begining.
+
+but it automatically get expend when new element get added to it.
+
+so, for that use case, we have Slice.
+
+Slices in Go.
+
+Slice is an abstraction of an array.
+Slices are more flexible and powerful: variable length or get an sub array of its own.
+slices are also index based and have a size, but is resized when needed.
+
+Loops
+
+In go we have only one loop = for loop.
+
+Defnite for loop
+
+loop over each bookings item
+
+and add booking user's first name to firstNames array.
+
+			for _, booking := range bookings {
+
+				var names = strings.Fields(booking)
+				firstNames = append(firstNames, names[0])
+
+			}
+
+
+Infinite loop
+
+for {
+
+}
+
+IF else conditionals
+
+if userTickets <= remainingTickets {
+    logic to book ticket here.
+}else{
+    fmt.Println("We only have remainingTickets tickets");
+}
+
+User input validation
+
+In our application we are allowing users to enter data.
+
+But user always doesn't enter data correctly, either intentionally or unintentionally.
+and we developer make sure that our application doesn't crash, when user input invalid inputs.
+so, we have to make sure that our application is so robust that our application doesn't crash when user enter invalid input.
+
+
+and way to check that user input valid information, any unexpected values or so on.
+
+
+
+like in email = jitu.gmail.com 
+
+error: @ sign missing
+
+firstName : a
+Error: Not a valid firstName!
+
+if else statement is very important in any programming language.
+
+because it controls the flow of application.
+
+Switch statement
+
+city := "London"
+
+	switch city {
+	case "New York":
+		//execute code for booking New York conference tickets
+
+	case "Singapore":
+		//execute code for booking Singapore conference tickets
+
+	case "London", "Berlin":
+		//execute code for booking London, Berlin conference tickets
+
+	default:
+		fmt.Println("No valid city selected")
+	}
+
+
+    In Go we have to define the input and output parameters including its type explicitly
