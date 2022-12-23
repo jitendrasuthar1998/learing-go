@@ -79,6 +79,26 @@ Local
 
 declared inside a particular function.
 
+Encapsulate logic with functions
+
+Maps
+
+Maps are like object in which we can store information in the form of key value pairs.
+
+In Maps, key and value should be of same data type.
+
+Syntax for creating map 
+
+var bookings = make(map[string]string)
+
+in map, key is also string and map is also string.
+
+strconv package has different functions to convert one data type into another.
+
+FormatUint(uint(userTickets), 10)
+
+convert uint userTickets to string userTickets with decimal precision.
+
 Package
 
 declared outside all functions.
@@ -86,3 +106,74 @@ declared outside all functions.
 Global
 
 declared with uppercase first character.
+
+Data Type which allows multiple data type value in the form of key value pairs is Map.
+
+Let's say we want to collect different types of data from user.
+
+For example we ask users for their date of birth which is date object.
+
+or we ask user to obtain a news letter, and we would save that information as boolean data type.
+like isOptedForNewsLetter.
+
+we also want to save a list associated with users like a manager book tickets for their team and we want to know the name of team members to know who will attend the conference.
+and this would we an array or slice of attendences.
+
+if we wanted team members email address, then it would be a slice of maps where each map will hold name of user and their email address.
+
+slice of maps = [{name:"Mike, email:"mike@gmail.com}]
+
+so, user entity would have all these data of different data types associated to it.
+
+we may also have other entity in our application.
+
+like Conference which will have own data associated to it. like in which cities the conference will be going to held, on which its hosted, how many people are attending etc.
+
+again values of mix data types.
+
+and in Go, Maps limits value to only 1 data type.
+
+SO, how can we save mixed data types value for an entity like user or conference in our Go application?
+
+Well for that we can use Struct
+
+Stands for "Structure"
+
+Struct let us define key value pairs for entity like user or conference but with mixed data type.
+
+Go routins - concurrency.
+
+let's say after user books ticket, we want to generate user ticket, and send it to their email address.
+
+Simulate a long processing task 
+
+Generate and send ticket
+
+Generating a ticket and sending it to email generally takes some time.
+some data need to be process in background.
+
+So, if we have real code that really generate a pdf of a ticket and then send it using an email client to an email address.
+
+
+It would actually take some time.
+
+let's say it would take 10 seconds.
+
+we can Simulate this delay using Sleep function of time package.
+
+	time.Sleep(3 * time.Second)
+
+So, Sleep function stops or blocks the current thread (goroutine) execution for the defined duration.
+
+So, till a time given to Sleep function, our application will be blocked.
+
+Handle this blocking code with Goroutines
+
+SO, application get blocked by sendTicket function code gets executed. So, once it's done, then we can continue to another booking.
+
+
+Now, if this is an application to handle multiple bookings of multiple users, then it would not be 
+an optimal performance.
+
+and that's why we need concurrency in our application.
+
